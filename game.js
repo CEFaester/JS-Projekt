@@ -41,7 +41,7 @@ function createBoard() {
             // Vi giver hver brik et unikt ID: "row-0-tile-0", "row-0-tile-1" osv.
             tile.id = `row-${r}-tile-${c}`; 
             tile.classList.add('tile'); // Klassen fra CSS
-            tile.style.border = "2px solid #3a3a3c";
+            tile.style.border = "2px solid var(--tertiary-color)"; // Hurtig styling fix
             tile.style.width = "60px";
             tile.style.height = "60px";
             tile.style.margin = "2px";
@@ -116,14 +116,14 @@ function checkRow() {
 
             // Logik til farver (Grøn, Gul, Grå)
             if (letter === secretWord[i]) {
-                tile.style.backgroundColor = '#538d4e'; // Grøn
-                tile.style.borderColor = '#538d4e';
+                tile.style.backgroundColor = 'var(--primary-green)'; // Grøn
+                tile.style.borderColor = 'var(--primary-green)';
             } else if (secretWord.includes(letter)) {
-                tile.style.backgroundColor = '#b59f3b'; // Gul
-                tile.style.borderColor = '#b59f3b';
+                tile.style.backgroundColor = 'var(--primary-yellow)'; // Gul
+                tile.style.borderColor = 'var(--primary-yellow)';
             } else {
-                tile.style.backgroundColor = '#3a3a3c'; // Grå
-                tile.style.borderColor = '#3a3a3c';
+                tile.style.backgroundColor = 'var(--quinary-color)'; // Grå
+                tile.style.borderColor = 'var(--quinary-color)';
             }
         }
 
