@@ -2,7 +2,7 @@ const tileDisplay = document.querySelector('#game-board');
 const keyboard = document.querySelector('#keyboard-container');
 
 // Det ord man skal gætte (du kan ændre det her, eller lave en liste)
-const wordle = 'CYKEL'; 
+const wordle = 'NUMSE'; 
 
 const keys = [
     'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Å',
