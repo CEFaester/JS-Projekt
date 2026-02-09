@@ -1,14 +1,23 @@
 /* Farver */
-:root {
-  --primary-dark-color: #121213;
-  --primary-light-color:#fbf7f5;
-  --lighter-dark-color: #3a3a3c;
-  --more-lighter-dark-color: #565758;
-  --even-more-lighter-dark-color: #818384;
+:root{
+  --primary-color: #121213;
+  --secondary-color:#fbf7f5;
+  --tertiary-color: #3a3a3c;
+  --quarternary-color: #565758;
+  --quinary-color: #818384;
   --primary-yellow: #b59f3b;
   --primary-green: #538d4e;
 }
 
+.lightmode {
+  --primary-color: #fbf7f5;
+  --secondary-color: #121213;
+  --tertiary-color: #cccccc;
+  --quarternary-color: #999999;
+  --quinary-color: #666666;
+  --primary-yellow: #b59f3b; /* Beholder de samme farver for feedback */
+  --primary-green: #538d4e;
+}
 
 
 /* Generel opsætning */
@@ -18,8 +27,8 @@
 }
 
 body {
-    background-color: var(--primary-dark-color); /* Mørk baggrund ligesom det rigtige spil */
-    color: var(--primary-light-color); /* Lys tekst for kontrast */
+    background-color: var(--primary-color); /* Mørk baggrund ligesom det rigtige spil */
+    color: var(--secondary-color); /* Lys tekst for kontrast */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -37,7 +46,7 @@ body {
 }
 
 header {
-    border-bottom: 1px solid var(--lighter-dark-color);
+    border-bottom: 1px solid var(--tertiary-color);
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
@@ -61,7 +70,7 @@ h1 {
 }
 
 .tile {
-    border: 2px solid var(--lighter-dark-color);
+    border: 2px solid var(--tertiary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,13 +92,13 @@ h1 {
 }
 
 .absent {
-    background-color: var(--lighter-dark-color); /* Grå */
-    border-color: var(--lighter-dark-color);
+    background-color: var(--quinary-color); /* Grå */
+    border-color: var(--quinary-color);
 }
 
 /* Animation når man skriver */
 .active {
-    border-color: var(--more-lighter-dark-color);
+    border-color: var(--quarternary-color);
 }
 
 /* Tastatur */
@@ -107,7 +116,7 @@ h1 {
 }
 
 .key {
-    background-color: var(--even-more-lighter-dark-color);
+    background-color: var(--quinary-color);
     border-radius: 4px;
     padding: 15px 10px;
     font-weight: bold;
