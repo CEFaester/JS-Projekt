@@ -172,7 +172,10 @@ function checkRow() {
 document.addEventListener('keydown', function(event) {
     const key = event.key.toUpperCase();
     
-    // Tjek om det er et bogstav, Enter eller Backspace
+    // 1. Definer hvilke bogstaver vi tillader (inklusiv Æ, Ø, Å)
+    const isLetter = /^[A-ZÆØÅ]$/.test(key);
+
+    // 2. Tjek logikken
     if (key === 'ENTER' || key === 'BACKSPACE' || (key.length === 1 && key >= 'A' && key <= 'Å')) {
         let gameKey = key;
         if (key === 'BACKSPACE') gameKey = '⌫'; // Oversæt til vores symbol
