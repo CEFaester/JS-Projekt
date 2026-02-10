@@ -103,32 +103,53 @@ function deleteLetter() {
 }
 
 function checkRow() {
-    // Tjek om rækken er fuld (5 bogstaver)
+    // 1. Tjek om rækken er fuld
     if (gameState.currentTile === 5) {
-        const guess = guessRows[gameState.currentRow].join(''); // Laver array om til string
-        const rowTiles = document.getElementById('game-board').children[gameState.currentRow];
+        const guess = guessRows[gameState.currentRow]; // Dette er et array: ['L', 'Y', 'K', 'K', 'E']
+        const secretArray = secretWord.split('');      // ['C', 'Y', 'K', 'E', 'L']
+        const tileStatuses = Array(5).fill('gray');    // Vi starter med at antage alt er gråt
 
-        // Farvelæg brikkerne
+        // PASS 1: Find alle de GRØNNE brikker først
         for (let i = 0; i < 5; i++) {
-            const letter = guess[i];
-            const tileID = `row-${gameState.currentRow}-tile-${i}`;
-            const tile = document.getElementById(tileID);
-
-            // Logik til farver (Grøn, Gul, Grå)
-            if (letter === secretWord[i]) {
-                tile.style.backgroundColor = 'var(--primary-green)'; // Grøn
-                tile.style.borderColor = 'var(--primary-green)';
-            } else if (secretWord.includes(letter)) {
-                tile.style.backgroundColor = 'var(--primary-yellow)'; // Gul
-                tile.style.borderColor = 'var(--primary-yellow)';
-            } else {
-                tile.style.backgroundColor = 'var(--quinary-color)'; // Grå
-                tile.style.borderColor = 'var(--quinary-color)';
+            if (guess[i] === secretArray[i]) {
+                tileStatuses[i] = 'green';
+                secretArray[i] = null; // "Fjern" bogstavet så det ikke tælles igen
             }
         }
 
-        // Tjek om man har vundet eller tabt
-        if (guess === secretWord) {
+        // PASS 2: Find de GULE brikker blandt de resterende
+        for (let i = 0; i < 5; i++) {
+            if (tileStatuses[i] === 'green') continue; // Spring over hvis den allerede er grøn
+
+            const letterIndex = secretArray.indexOf(guess[i]);
+            if (letterIndex !== -1) {
+                tileStatuses[i] = 'yellow';
+                secretArray[letterIndex] = null; // "Fjern" brikken så den er brugt
+            }
+        }
+
+        // 2. Opdater DOM/Farver baseret på vores tileStatuses array
+        for (let i = 0; i < 5; i++) {
+            const tileID = `row-${gameState.currentRow}-tile-${i}`;
+            const tile = document.getElementById(tileID);
+            const status = tileStatuses[i];
+
+            if (status === 'green') {
+                tile.style.backgroundColor = 'var(--primary-green)';
+                tile.style.borderColor = 'var(--primary-green)';
+            } else if (status === 'yellow') {
+                tile.style.backgroundColor = 'var(--primary-yellow)';
+                tile.style.borderColor = 'var(--primary-yellow)';
+            } else {
+                tile.style.backgroundColor = 'var(--quinary-color)';
+                tile.style.borderColor = 'var(--quinary-color)';
+            }
+            tile.style.color = "white"; // Sikrer at bogstaverne kan læses på farven
+        }
+
+        // 3. Tjek Win/Loss (samme som før)
+        const guessString = guess.join('');
+        if (guessString === secretWord) {
             alert('Du vandt!');
             gameState.isGameOver = true;
         } else {
@@ -136,7 +157,6 @@ function checkRow() {
                 alert('Spillet slut! Ordet var: ' + secretWord);
                 gameState.isGameOver = true;
             } else {
-                // Gå til næste række
                 gameState.currentRow++;
                 gameState.currentTile = 0;
             }
