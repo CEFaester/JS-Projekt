@@ -1,12 +1,14 @@
+// kode af Coding2GO på YouTube - https://www.youtube.com/watch?v=_gKEUYarehE
+
 const themeSwitch = document.getElementById('theme-switch');
 
 const enableLightMode = () => {
-    document.body.classList.add('lightmode'); // Rettet: ingen bindestreg
+    document.body.classList.add('lightmode');
     localStorage.setItem('lightMode', 'active');
 };
 
 const disableLightMode = () => {
-    document.body.classList.remove('lightmode'); // Rettet: ingen bindestreg
+    document.body.classList.remove('lightmode');
     localStorage.removeItem('lightMode');
 };
 
