@@ -1,4 +1,4 @@
-// Lavet ved hjælp af Gemini AI
+// kode lavet ved hjælp af Gemini AI
 
 const keyboardContainer = document.getElementById('keyboard-container');
 
@@ -17,24 +17,25 @@ function initKeyboard() {
     console.log("Starter tastatur...");
 
     for (let i = 0; i < keyLayout.length; i++) {
-        
         let currentRow = keyLayout[i];
-        
         const rowDiv = document.createElement('div');
         rowDiv.classList.add('keyboard-row');
 
         currentRow.forEach(key => {
-            
             const button = document.createElement('button');
             button.textContent = key;
             button.classList.add('key');
+            
+            button.id = 'key-' + key; 
 
             if (specialKeys[key]) {
-
                 button.classList.add(specialKeys[key].class);
             }
 
             button.addEventListener('click', function() {
+                button.classList.add('active');
+                setTimeout(() => button.classList.remove('active'), 100);
+                
                 handleKeyPress(key);
             });
 
@@ -46,13 +47,27 @@ function initKeyboard() {
 }
 
 function handleKeyPress(selectedKey) {
-    console.log("Du trykkede på: " + selectedKey);
-
-
     if (typeof updateGame === "function") {
         updateGame(selectedKey);
-    } else {
-        console.warn("Funktionen 'updateGame' findes ikke endnu. Vent på din gruppemakker!");
+    }
+}
+
+function updateKeyColor(key, status) {
+    const button = document.getElementById('key-' + key);
+
+    if (button) {
+        const isCorrect = button.classList.contains('correct');
+
+        if (status === 'correct') {
+            button.classList.remove('present', 'absent');
+            button.classList.add('correct');
+        } 
+        else if (status === 'present' && !isCorrect) {
+            button.classList.add('present');
+        } 
+        else if (status === 'absent' && !isCorrect) {
+            button.classList.add('absent');
+        }
     }
 }
 
