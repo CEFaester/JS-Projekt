@@ -1,4 +1,4 @@
-// Lavet ved hjælp af Gemini AI - https://gemini.google.dev/
+// Lavet ved hjælp af Gemini AI
 
 const keyboardContainer = document.getElementById('keyboard-container');
 
