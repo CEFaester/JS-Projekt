@@ -1,22 +1,26 @@
 /* Farver */
 :root{
-  --primary-color: #121213;
-  --secondary-color:#fbf7f5;
-  --tertiary-color: #3a3a3c;
-  --quarternary-color: #565758;
-  --quinary-color: #818384;
-  --primary-yellow: #b59f3b;
-  --primary-green: #538d4e;
+    --primary-color: #121213;
+    --secondary-color:#fbf7f5;
+    --tertiary-color: #3a3a3c;
+    --quarternary-color: #565758;
+    --quinary-color: #818384;
+    --primary-yellow: #b59f3b;
+    --primary-green: #538d4e;
+    --text-color: #fbf7f5;
+    --tile-text-color: #fbf7f5;
 }
 
 .lightmode {
-  --primary-color: #fbf7f5;
-  --secondary-color: #121213;
-  --tertiary-color: #cccccc;
-  --quarternary-color: #999999;
-  --quinary-color: #666666;
-  --primary-yellow: #b59f3b; /* Beholder de samme farver for feedback */
-  --primary-green: #538d4e;
+    --primary-color: #fbf7f5;
+    --secondary-color: #121213;
+    --tertiary-color: #cccccc;
+    --quarternary-color: #999999;
+    --quinary-color: #646565;
+    --primary-yellow: #b59f3b; /* Beholder de samme farver for feedback */
+    --primary-green: #538d4e;
+    --text-color: #fbf7f5;
+    --tile-text-color: #121213;
 }
 
 #theme-switch {
@@ -117,6 +121,7 @@ h1 {
     font-weight: bold;
     text-transform: uppercase;
     user-select: none;
+    color: var(--tile-text-color);
 }
 
 /* Farver til feedback (bruges af JavaScript) */
@@ -163,6 +168,7 @@ h1 {
     text-transform: uppercase;
     min-width: 30px;
     text-align: center;
+    color: var(--text-color);
 }
 
 .key-wide {
