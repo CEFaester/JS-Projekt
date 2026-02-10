@@ -88,14 +88,24 @@ h1 {
 }
 
 /* Spillepladen (Gitteret) */
-#game-board {
+
+/* #game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 kolonner */
-    grid-template-rows: repeat(6, 1fr);    /* 6 rækker */
+    grid-template-columns: repeat(5, 1fr); /* 5 kolonner
+    grid-template-rows: repeat(6, 1fr);    /* 6 rækker
     gap: 5px;
     width: 300px;
     height: 360px;
     margin-bottom: 30px;
+} */
+
+#game-board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr); /* 6 rækker */
+    grid-gap: 5px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .tile {
@@ -157,4 +167,24 @@ h1 {
 
 .key-wide {
     padding: 15px 20px;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 søjler */
+    grid-gap: 5px;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #3a3a3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white; /* Så man kan se bogstaverne */
 }
