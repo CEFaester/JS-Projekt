@@ -46,7 +46,7 @@ function createBoard() {
             tile.style.fontSize = "30px";
             tile.style.fontWeight = "bold";
             tile.style.textTransform = "uppercase";
-            tile.style.color = "white";
+            tile.style.color = "var(--tile-text-color)";
 
             rowDiv.appendChild(tile);
         }
@@ -130,12 +130,15 @@ function checkRow() {
             if (status === 'correct') {
                 tile.style.backgroundColor = 'var(--primary-green)'; // Grøn
                 tile.style.borderColor = 'var(--primary-green)';
+                tile.style.color = 'var(--text-color)';
             } else if (status === 'present') {
                 tile.style.backgroundColor = 'var(--primary-yellow)'; // Gul
                 tile.style.borderColor = 'var(--primary-yellow)';
+                tile.style.color = 'var(--text-color)';
             } else {
                 tile.style.backgroundColor = 'var(--quinary-color)'; // Grå
                 tile.style.borderColor = 'var(--quinary-color)';
+                tile.style.color = 'var(--text-color)';
             }
 
             // Farv TASTATURET (Kalder din funktion!)
