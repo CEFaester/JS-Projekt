@@ -18,4 +18,6 @@ if (localStorage.getItem('lightMode') === 'active') {
 themeSwitch.addEventListener('click', () => {
     const isLight = localStorage.getItem('lightMode') === 'active';
     isLight ? disableLightMode() : enableLightMode();
+
+    themeSwitch.blur();
 });

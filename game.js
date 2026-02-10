@@ -51,6 +51,7 @@ function createBoard() {
             tile.style.fontSize = "30px";
             tile.style.fontWeight = "bold";
             tile.style.textTransform = "uppercase";
+            tile.style.color = "var(--tile-text-color)"; // Sikrer at teksten er synlig på både lys og mørk baggrund
 
             rowDiv.appendChild(tile);
         }
