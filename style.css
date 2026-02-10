@@ -176,6 +176,21 @@ h1 {
     padding: 15px 20px;
 }
 
+.key.correct {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.key.present {
+    background-color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+}
+
+.key.absent {
+    background-color: var(--quinary-color);
+    border-color: var(--quinary-color);
+}
+
 
 .row {
     display: grid;
