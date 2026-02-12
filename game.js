@@ -1,3 +1,5 @@
+// lavet ved hjælp af Gemini AI
+
 // 1. Variabler og Typer
 const secretWord = "CYKEL"; // String
 const maxGuesses = 6;     // Number
