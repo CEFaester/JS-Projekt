@@ -1,5 +1,33 @@
 // 1. Variabler og Typer
-const wordList = ["CYKEL", "KAFFE", "STORM", "HYGGE", "DANSK", "ÆRLIG", "TOMAS", "HESTE"];
+const wordList =[
+        "ANDEN", "ARMEN", "AFTEN", "ANKER", "ANGST",
+        "BANEN", "BROEN", "BLÆSE", "BILEN", "BRUDE",
+        "CIDER", "CYKLE", "CREME", "CIVIL", "CITAT",
+        "DRAGE", "DALEN", "DØREN", "DAGEN", "DYRKE",
+        "ELSKE", "EGNEN", "ENDEN", "ENORM",
+        "FARVE", "FLYVE", "FRISK", "FRYSE", "FEBER",
+        "GRINE", "GRIBE", "GULVE", "GLÆDE", "GAVEN",
+        "HUSET", "HØJDE", "HÅBET", "HÆFTE", "HILSEN", "HESTE",
+        "ISENE", "ILDNE", "INPUT", "INTRO",
+        "JOKEN", "JORDE", "JAGER", "JOLLE", "JULEN", "JYSKE", "JOKES",
+        "KRONE", "KASTE", "KURVE", "KUGLE", "KJOLE", "KAFFE",
+        "LÆSER", "LYSNE", "LØBET", "LANDE", "LOVEN",
+        "MAGTE", "MØDET", "MODEN", "MALER", "MÅNEN",
+        "NÆSEN", "NAVNE", "NOGEN", "NAVLE", "NYTTE",
+        "ORDEN", "OFFER", "ONKEL", "OVERE", "OMBUD",
+        "PRØVE", "PENGE", "PUDER", "PYNTE", "PLADS",
+        "QATAR", "REGNE", "RETTE", "RODEO", "RUNDE", "RULLE",
+        "SKRIV", "SØGER", "SMAGE", "SKABE", "SLØVE",
+        "TRÆNE", "TALEN", "TOGET", "TUNGE", "TRIST",
+        "UNDER", "UDNYT", "UDVEJ", "URENE", "ULDNE", "UDGAV", "UDKIG",
+        "VENDE", "VILDE", "VOKSE", "VÆRRE", "VORES",
+        "WIREN", "WIRER",
+        "YNGEL", "YNDET", "YNDIG", "YDERS", "YPPIG",
+        "ZEBRA", "ZEBUS", "ZINKS", "ZOBEL", "ZOMBI", "ZONEN", "ZONER", "ZOOEN", "ZOOER",
+        "ÆBLER", "ÆGGET", "ÆLDRE", "ÆDELT",
+        "ØNSKE", "ØRKEN", "ØRENE", "ØRRED", "ØVEDE",
+        "ÅBNER", "ÅRENE", "ÅNDES", "ÅNDEN", "ÅBENT"
+    ];
 const secretWord = wordList[Math.floor(Math.random() * wordList.length)];
 const maxGuesses = 6;     // Number
 
