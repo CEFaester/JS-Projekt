@@ -1,8 +1,8 @@
-// lavet ved hjælp af Gemini AI
-
 // 1. Variabler og Typer
-const secretWord = "CYKEL"; // String
+const wordList = ["CYKEL", "KAFFE", "STORM", "HYGGE", "DANSK", "ÆRLIG", "TOMAS", "HESTE"];
+const secretWord = wordList[Math.floor(Math.random() * wordList.length)];
 const maxGuesses = 6;     // Number
+
 
 // 6. Objekter
 let gameState = {
