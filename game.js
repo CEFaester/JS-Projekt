@@ -90,7 +90,7 @@ function deleteLetter() {
         const tileID = `row-${gameState.currentRow}-tile-${gameState.currentTile}`;
         const tileElement = document.getElementById(tileID);
         tileElement.textContent = '';
-        tileElement.style.borderColor = "#3a3a3c";
+        tileElement.style.borderColor = "var(--quinary-color)"; // Tilbage til standard
     }
 }
 
