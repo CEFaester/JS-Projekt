@@ -44,13 +44,13 @@ function initKeyboard() {
 
         keyboardContainer.appendChild(rowDiv);
     }
-}
+};
 
 function handleKeyPress(selectedKey) {
     if (typeof updateGame === "function") {
         updateGame(selectedKey);
     }
-}
+};
 
 function updateKeyColor(key, status) {
     const button = document.getElementById('key-' + key);
@@ -69,6 +69,6 @@ function updateKeyColor(key, status) {
             button.classList.add('absent');
         }
     }
-}
+};
 
 initKeyboard();
