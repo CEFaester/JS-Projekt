@@ -82,7 +82,7 @@ function createBoard() {
         }
         gameBoard.appendChild(rowDiv);
     }
-}
+};
 
 // 8. Funktioner - Modtager input fra tastaturet
 function updateGame(key) {
@@ -95,7 +95,7 @@ function updateGame(key) {
     } else {
         addLetter(key);
     }
-}
+};
 
 function addLetter(letter) {
     if (gameState.currentTile < 5 && gameState.currentRow < 6) {
@@ -108,7 +108,7 @@ function addLetter(letter) {
         
         gameState.currentTile++;
     }
-}
+};
 
 function deleteLetter() {
     if (gameState.currentTile > 0) {
@@ -120,7 +120,7 @@ function deleteLetter() {
         tileElement.textContent = '';
         tileElement.style.borderColor = "var(--quinary-color)"; // Tilbage til standard
     }
-}
+};
 
 function checkRow() {
     // 1. Tjek om rækken er fuld
@@ -199,7 +199,7 @@ function checkRow() {
     } else {
         alert("Ikke nok bogstaver!");
     }
-}
+};
 
 // 10. Events
 document.addEventListener('keydown', function(event) {
