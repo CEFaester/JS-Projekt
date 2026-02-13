@@ -40,7 +40,7 @@ function login() {
             localStorage.setItem("currentUser", JSON.stringify(users[i]));
 
             // Redirect
-            window.location.href = "index.html";
+            window.location.href = "game.html";
 
             break;
         }
