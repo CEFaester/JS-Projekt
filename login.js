@@ -49,7 +49,7 @@ function login() {
     if (!isLoggedIn) {
         message.innerText = "Forkert brugernavn eller adgangskode!";
     }
-}
+};
 
 // ==============================
 // GÆST LOGIN
@@ -65,7 +65,7 @@ function playAsGuest() {
     localStorage.setItem("currentUser", JSON.stringify(guestUser));
 
     window.location.href = "game.html";
-}
+};
 
 // ==============================
 // EVENTS

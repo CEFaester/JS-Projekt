@@ -15,7 +15,7 @@ const disableLightMode = () => {
 // Tjek ved indlæsning
 if (localStorage.getItem('lightMode') === 'active') {
     enableLightMode();
-}
+};
 
 themeSwitch.addEventListener('click', () => {
     const isLight = localStorage.getItem('lightMode') === 'active';
